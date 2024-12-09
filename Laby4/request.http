@@ -1,0 +1,118 @@
+#### ++++++++++++++++++ POLICE DEPARTMENTS ++++++++++++++++++
+
+### ------------------ CREATE ------------------
+
+## Create a new Police Department
+POST http://localhost:8081/api/departments
+Content-Type: application/json
+
+{
+  "name": "Central Police Department",
+  "city": "New York",
+  "numberOfCases": 12
+}
+ 
+###
+POST http://localhost:8081/api/departments
+Content-Type: application/json
+
+{
+  "name": "Police Department666",
+  "city": "Washington",
+  "numberOfCases": 15
+}
+
+### ------------------ GET ------------------
+
+## Get all Police Departments
+GET http://localhost:8081/api/departments
+
+### Get a single Police Department by city
+GET http://localhost:8080/api/departments/city/New York
+
+### ------------------ UPDATE ------------------
+
+## Update an existing Police Department by ID
+PUT http://localhost:8080/api/departments/82b52161-9d38-4043-8a2f-26625b9a087d
+Content-Type: application/json
+
+{
+  "name": "Updated Police Department",
+  "city": "Los Angeles"
+}
+
+###
+PUT http://localhost:8080/api/departments/city/Houston
+Content-Type: application/json
+
+{
+  "name": "Updated Police Department",
+  "city": "Los Angeles",
+  "numberOfCases": 5
+}
+
+
+### ------------------ DELETE ------------------
+
+## Delete a Police Department by ID
+DELETE http://localhost:8080/api/departments/c9b0fc6e-0410-4669-9914-86528bfca10c
+
+### Delete a Police Department by city
+DELETE http://localhost:8080/api/departments/city/New York
+
+
+#### ++++++++++++++++++ POLICE OFFICERS ++++++++++++++++++
+
+### ------------------ CREATE ------------------
+
+## Create a new Police Officer
+POST http://localhost:8080/api/officers
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "badgeNumber": 12345,
+  "yearsOfService": 10,
+  "rank": 1,
+  "departmentId": "a96271f0-4c48-4d78-8492-d795d9eed3cb"
+}
+
+### ------------------ GET ------------------
+
+## Get all Police Officers
+GET http://localhost:8080/api/officers
+
+### Get Police Officers by Department ID
+GET http://localhost:8080/api/officers/department/a96271f0-4c48-4d78-8492-d795d9eed3cb
+
+### Get a single Police Officer by ID
+GET http://localhost:8080/api/officers/{id}
+
+### ------------------ UPDATE ------------------
+
+## Update an existing Police Officer by ID
+PUT http://localhost:8080/api/officers/34da6e7f-625e-4c5f-85ee-b2b76300f7e2
+Content-Type: application/json
+
+{
+  "name": "Updated Officer Name",
+  "badgeNumber": 67890,
+  "yearsOfService": 12,
+  "rank": 2,
+  "departmentId": "a96271f0-4c48-4d78-8492-d795d9eed3cb"
+}
+
+### ------------------ DELETE ------------------
+
+## Delete a Police Officer by ID
+DELETE http://localhost:8080/api/officers/9ddafd9e-1a31-4756-8a27-91d60dc23f29
+
+### Delete a Police Officer by ID
+DELETE http://localhost:8080/api/officers/name/John Doe
+
+
+### Delete all officers with a specific rank
+DELETE http://localhost:8080/api/officers/rank/1
+
+
+
