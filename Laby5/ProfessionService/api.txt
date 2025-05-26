@@ -1,0 +1,35 @@
+Character:
+{
+    "name": "Andrzej",
+    "age": 40,
+    "level": 2,
+    "department": "d68ffd8e-e9e6-3191-a4cf-915bca1c5abb"    (Aktor)
+}
+
+Profession: {
+    "name": "Testowy",
+    "yearsOfExperience": 20,
+}
+
+GET:
+localhost:8080/api/officers -> all officers
+localhost:8080/api/officers/{character_uuid} -> details about officer with given uuid
+=======
+localhost:8080/api/departments -> all departments
+localhost:8080/api/departments/{profession_uuid} -> details about department with given uuid
+localhost:8080/api/departments/{profession_uuid}/officers -> officers with given department
+
+
+POST:
+localhost:8080/api/departments/{profession_uuid}/officers -> create officer with given department
+
+PUT:
+localhost:8080/api/departments -> create department
+
+PATCH:
+localhost:8080/api/officers/{uuid} -> update officer with given uuid
+localhost:8080/api/departments/{uuid} -> update department with given uuid
+
+DELETE:
+localhost:8080/api/officers/{uuid} -> delete officer with given uuid
+localhost:8080/api/departments/{uuid} -> delete department with given uuid

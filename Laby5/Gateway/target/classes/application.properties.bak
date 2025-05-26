@@ -1,0 +1,5 @@
+game.officer-service.url=http://localhost:8081
+game.department-service.url=http://localhost:8082
+
+spring.application.name=Gateway
+service.port=8080
