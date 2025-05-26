@@ -1,0 +1,69 @@
+### Get all departments
+GET http://localhost:8080/api/departments
+
+### Get all officers
+GET http://localhost:8080/api/officers
+
+
+### Create a new department
+PUT http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Testowy",
+  "city": "Warszawa",
+  "numberOfCases": 14
+}
+
+### Get a department by UUID
+GET http://localhost:8080/api/departments/4d8fbb62-3390-3bc3-82ec-c554c53f73fb
+
+### Get a not existing department
+GET http://localhost:8080/api/departments/8554295e-22c0-4d94-9358-177ccc857b10
+
+### Update a department
+PATCH http://localhost:8080/api/departments/4d8fbb62-3390-3bc3-82ec-c554c53f73fb
+Content-Type: application/json
+
+{
+  "name": "NowaNazwa",
+  "city": "Bytom",
+  "numberOfCases": 17
+}
+
+### Delete a department
+DELETE http://localhost:8080/api/departments/4d8fbb62-3390-3bc3-82ec-c554c53f73fb
+
+### Get all officers of a given department
+GET http://localhost:8080/api/departments/d020dd50-35dd-32a9-86c6-077193a4c274/officers
+
+### Create new officer with a given department
+POST http://localhost:8080/api/departments/d020dd50-35dd-32a9-86c6-077193a4c274/officers
+Content-Type: application/json
+
+{
+  "name": "Paweł",
+  "badgeNumber": 30,
+  "yearsOfService": 5,
+  "rank": 51
+}
+
+### Get all officers
+GET http://localhost:8080/api/officers
+
+### Get a officer by UUID
+GET http://localhost:8080/api/officers/7efd721c-8bff-3293-bc66-235f2d0dbac1
+
+### Get a not existing officer
+GET http://localhost:8080/api/officers/9be83deb-879f-4f11-9af0-0afaaff11ecc
+
+### Update a officer
+PATCH http://localhost:8080/api/officers/fcf02c44-0291-482e-b26d-789aa403398c
+Content-Type: application/json
+
+{
+  "rank": 50
+}
+
+### Delete a officer
+DELETE http://localhost:8080/api/officers/fcf02c44-0291-482e-b26d-789aa403398c

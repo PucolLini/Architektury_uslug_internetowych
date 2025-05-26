@@ -1,0 +1,66 @@
+### Get all departments
+GET http://localhost:8080/api/departments
+
+### Get all officers
+GET http://localhost:8080/api/officers
+
+
+### Create a new department
+PUT http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Testowy",
+  "yearsOfExperience": 4
+}
+
+### Get a department by UUID
+GET http://localhost:8080/api/departments/514046b4-3f8e-409c-a51f-b99e29c1406c
+
+### Get a not existing department
+GET http://localhost:8080/api/department/8554295e-22c0-4d94-9358-177ccc857b10
+
+### Update a department
+PATCH http://localhost:8080/api/departments/514046b4-3f8e-409c-a51f-b99e29c1406c
+Content-Type: application/json
+
+{
+  "name": "NowaNazwa",
+  "yearsOfExperience": 5
+}
+
+### Delete a department
+DELETE http://localhost:8080/api/departments/514046b4-3f8e-409c-a51f-b99e29c1406c
+
+### Get all officers of a given department
+GET http://localhost:8080/api/departments/c6f4415b-6cd3-3e2d-b361-769a115a2ca9/officers
+
+### Create new officer with a given department (Żołnierz)
+POST http://localhost:8080/api/departments/c6f4415b-6cd3-3e2d-b361-769a115a2ca9/officers
+Content-Type: application/json
+
+{
+  "name": "Paweł",
+  "age": 30,
+  "level": 500
+}
+
+### Get all officers
+GET http://localhost:8080/api/officers
+
+### Get a officer by UUID (Paweł Żołnierz lvl 500)
+GET http://localhost:8080/api/officers/
+
+### Get a not existing officer
+GET http://localhost:8080/api/officers/9be83deb-879f-4f11-9af0-0afaaff11ecc
+
+### Update a officer (Paweł, lvl 500 -> 50)
+PATCH http://localhost:8080/api/officers/9be83deb-879f-4f11-9af0-0afaaff11ecc
+Content-Type: application/json
+
+{
+  "level": 50
+}
+
+### Delete a officer
+DELETE http://localhost:8080/api/officers/9be83deb-879f-4f11-9af0-0afaaff11ecc
